@@ -26,7 +26,7 @@ nrow(subSetData)
 
 #str(subSetData)
 gap <- as.numeric(subSetData$Global_active_power)
-png("plot1.png", width=500, height=500)
+png("plot1.png", width=480, height=480)
 hist(gap, col="red", main="Global Active Power", xlab="Global Active Power (kilowatts)")
 dev.off()
 
@@ -36,7 +36,7 @@ head(subSetData)
 #str(subSetData)
 datetime <- strptime(paste(subSetData$Date, subSetData$Time, sep=" "), "%d/%m/%Y %H:%M:%S") 
 gap <- as.numeric(subSetData$Global_active_power)
-png("plot2.png", width=500, height=500)
+png("plot2.png", width=480, height=480)
 plot(datetime, gap, type="l", xlab="", ylab="Global Active Power (kilowatts)")
 dev.off()
 
@@ -50,7 +50,7 @@ subMetering1 <- as.numeric(subSetData$Sub_metering_1)
 subMetering2 <- as.numeric(subSetData$Sub_metering_2)
 subMetering3 <- as.numeric(subSetData$Sub_metering_3)
 
-png("plot3.png", width=500, height=500)
+png("plot3.png", width=480, height=480)
 plot(datetime, subMetering1, type="l", ylab="Energy Submetering", xlab="")
 lines(datetime, subMetering2, type="l", col="red")
 lines(datetime, subMetering3, type="l", col="blue")
@@ -69,7 +69,7 @@ subMetering2 <- as.numeric(subSetData$Sub_metering_2)
 subMetering3 <- as.numeric(subSetData$Sub_metering_3)
 
 
-png("plot4.png", width=500, height=500)
+png("plot4.png", width=480, height=480)
 par(mfrow = c(2, 2)) 
 
 plot(datetime, gap, type="l", xlab="", ylab="Global Active Power", cex=0.2)
